@@ -40,13 +40,13 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-              sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
-              sudo-apt-get -y purge azure-cli* docker* gh* zulu* llvm* firefox google* dotnet* powershell* openjdk* mysql* php* mongodb* dotnet* snapd*
-              sudo-apt-get -y autoremove --purge
-              sudo-apt-get -y clean
-              sudo timedatectl set-timezone "$TZ"
-              sudo mkdir -p /workdir
-              sudo chown $USER:$GROUPS /workdir
+        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
+        sudo-apt-get -y purge azure-cli* docker* gh* zulu* llvm* firefox google* dotnet* powershell* openjdk* mysql* php* mongodb* dotnet* snapd*
+        sudo-apt-get -y autoremove --purge
+        sudo-apt-get -y clean
+        sudo timedatectl set-timezone "$TZ"
+        sudo mkdir -p /workdir
+        sudo chown $USER:$GROUPS /workdir
 
     - name: Clone source code
       working-directory: /workdir
